@@ -10,10 +10,15 @@ var fs = require('fs');
 var spotify = new spotify(keys.spotify);
 
 
-for (var i = 0; i < response.length; i++) {
-    if (response[i]) {
-      result += parseFloat(data[i]);
-    }
+var response = process.argv;
+
+var action = response[2];
+var userInput = response[3];
+
+for (var i = 4; i < response.length; i++) {
+    userInput += "+" + response[i];
+}
+
 switch (action) {
 
     case "concert-this":
@@ -33,29 +38,7 @@ switch (action) {
         break;
     }
 
-    function response() {
-
-        fs.readFile("lifi.txt", "utf8", function(err, data) {
-          if (err) {
-            return console.log(err);
-          }
-      
-          data = data.split(", ");
-          var result = 0;
-      
-          // Loop through those numbers and add them together to get a sum.
-          for (var i = 0; i < response.length; i++) {
-            if (parseFloat(data[i])) {
-              result += parseFloat(data[i]);
-            }
-          }
-      
-          // We will then print the final balance rounded to two decimal places.
-          console.log("You have a total of " + result.toFixed(2));
-        });
-      }
-      
-
+// BANDS IN TOWN
       function concert_this() {
         fs.readFile("liri.txt" + value, function(err) {
           if (err) {
@@ -64,42 +47,42 @@ switch (action) {
         });
         console.log("Concert is " + value + ".");
       }
-      
-      
+
+//SPOTIFY
       function spotify_this_song() {
-      
-        // We will add a negative value to the bank file.
         fs.appendFile("liri.txt" + value, function(err) {
           if (err) {
             return console.log(err);
           }
         });
-      
         console.log("Spotify says " + value + ".");
       }
 
-
+//IMDB
       function movie_this() {
-      
-        // We will add a negative value to the bank file.
-        fs.appendFile("liri.txt" + value, function(err) {
-          if (err) {
-            return console.log(err);
-          }
-        });
-      
-        console.log("IMDB says " + value + ".");
-      }
+        
+            var queryUrl = "http://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&apikey=trilogy";
+            console.log(queryUrl);
+            axios.get(queryUrl).then(
+            function(entry) {
+                console.log("Title: " + entry.data.Title);
+                console.log("Release Year: " + entry.data.Year);
+                console.log("IMDB Rating: " + entry.data.imdbRating);
+                console.log("Rotten Tomatoes Rating: " + entry.data.Ratings[1].Value);
+                console.log("Country Where Movie Was Produced: " + entry.data.Country);
+                console.log("Language of the Movie: " + entry.data.Language);
+                console.log("Plot of the Movie: " + entry.data.Plot);
+                console.log("Actors in the Movie: " + entry.data.Actors);
+                })
+         }
 
-
+//DO WHAT IT SAYS...NOW
       function do_what_it_says() {
-      
-        // We will add a negative value to the bank file.
         fs.appendFile("liri.txt" + value, function(err) {
           if (err) {
             return console.log(err);
           }
         });
-      
         console.log("Liri says, do this " + value + ".");
       }
+    
