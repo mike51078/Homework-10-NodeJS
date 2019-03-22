@@ -59,3 +59,8 @@ typings/
 
 # next.js build output
 .next
+
+# files to ignore per project instructions
+node_modules
+.DS_Store
+.env
