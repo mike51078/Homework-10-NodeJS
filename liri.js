@@ -4,7 +4,6 @@ require("dotenv").config();
 var spotify = require("node-spotify-api")
 var axios = require("axios");
 var moment = require("moment");
-var dotenv = require("dotenv");
 var keys = require('./keys.js');
 var fs = require('fs');
 var spotify = new spotify(keys.spotify);
@@ -18,6 +17,8 @@ var userInput = response[3];
 for (var i = 4; i < response.length; i++) {
     userInput += "+" + response[i];
 }
+
+function queryInput(action, userInput) {
 
     switch (action) {
 
@@ -36,7 +37,10 @@ for (var i = 4; i < response.length; i++) {
         case "do-what-it-says":
             do_what_it_says();
             break;
-        }
+    };
+};
+
+queryInput(action, userInput);
 
 // BANDS IN TOWN
       function concert_this() {
@@ -107,14 +111,15 @@ for (var i = 4; i < response.length; i++) {
 
 //DO WHAT IT SAYS...NOW
       function do_what_it_says() {
-        fs.readFile("./random.txt", "utf8", function(error, response)  {
+        fs.readFile("./random.txt", "utf8", function(error, output)  {
             if (error) {
                 return console.log(error);
             };
-            response = response.split(",");
-            action = response[0];
-            userInput = response[1]
+            output = output.split(",");
+            action = output[0];
+            userInput = output[1];
             console.log(action);
             console.log(userInput);
+            // queryInput(action, userInput);
           });
         }
