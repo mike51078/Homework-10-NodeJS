@@ -19,24 +19,24 @@ for (var i = 4; i < response.length; i++) {
     userInput += "+" + response[i];
 }
 
-switch (action) {
+    switch (action) {
 
-    case "concert-this":
-        concert_this();
-        break;
+        case "concert-this":
+            concert_this();
+            break;
 
-    case "spotify-this-song":
-        spotify_this_song();
-        break;
-    
-    case "movie-this":
-        movie_this();
-        break;
-    
-    case "do-what-it-says":
-        do_what_it_says();
-        break;
-    }
+        case "spotify-this-song":
+            spotify_this_song();
+            break;
+        
+        case "movie-this":
+            movie_this();
+            break;
+        
+        case "do-what-it-says":
+            do_what_it_says();
+            break;
+        }
 
 // BANDS IN TOWN
       function concert_this() {
@@ -91,10 +91,12 @@ switch (action) {
 
 //DO WHAT IT SAYS...NOW
       function do_what_it_says() {
-        fs.readFile("./random.txt", "utf8", function(data)  {
-            var says = data.split(",");
-            action = says[0];
-            userInput = says[1]
-            action
+        fs.readFile("./random.txt", "utf8", function(error, response)  {
+            if (error) throw error;
+            response = response.split(",");
+            action = response[0];
+            userInput = response[1]
+            console.log(action);
+            console.log(userInput);
           });
         }
