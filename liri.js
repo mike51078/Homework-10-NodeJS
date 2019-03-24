@@ -40,12 +40,10 @@ switch (action) {
 
 // BANDS IN TOWN
       function concert_this() {
-        fs.readFile("liri.txt" + value, function(err) {
-          if (err) {
-            return console.log(err);
-          }
-        });
-        console.log("Concert is " + value + ".");
+        var queryUrl = "https://rest.bandsintown.com/artists/" + userInput + "/events?app_id=codingbootcamp";
+        console.log(queryUrl);
+
+        
       }
 
 //SPOTIFY
