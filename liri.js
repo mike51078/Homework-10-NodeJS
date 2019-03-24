@@ -56,7 +56,7 @@ switch (action) {
                 console.log(response);
             // console.log('===================================================')
             // console.log('');
-            // console.log("Artist: " + response.data.Artist + ".");
+            // console.log("Artist: " + response.data.items[] + ".");
             // console.log("Name of Song: " + response.data.Name);
             // console.log("Link to Song: " +response.data.Link);
             // console.log("Album: " + response.data.Album);
@@ -91,11 +91,10 @@ switch (action) {
 
 //DO WHAT IT SAYS...NOW
       function do_what_it_says() {
-        fs.appendFile("liri.txt" + value, function(err) {
-          if (err) {
-            return console.log(err);
-          }
-        });
-        console.log("Liri says, do this " + value + ".");
-      }
-    
+        fs.readFile("./random.txt", "utf8", function(data)  {
+            var says = data.split(",");
+            action = says[0];
+            userInput = says[1]
+            action
+          });
+        }
