@@ -62,16 +62,15 @@ for (var i = 4; i < response.length; i++) {
         spotify
             .search({ type: 'track', query: userInput, limit: 1 })
             .then(function(response) {
-
-                console.log(response);
-            // console.log('===================================================')
-            // console.log('');
-            // console.log("Artist: " + response.data.items[] + ".");
-            // console.log("Name of Song: " + response.data.Name);
-            // console.log("Link to Song: " +response.data.Link);
-            // console.log("Album: " + response.data.Album);
-            // console.log('');
-            // console.log('===================================================')
+            // console.log(response);
+            console.log('===================================================')
+            console.log('');
+            console.log("Artist: " + response.tracks.items[0].artists[0].name);
+            console.log("Name of Song: " + response.tracks.items[0].name);
+            console.log("Link to Song: " + response.tracks.items[0].preview_url);
+            console.log("Album: " + response.tracks.items[0].album.name);
+            console.log('');
+            console.log('===================================================')
 
         });
     }  
