@@ -50,13 +50,20 @@ switch (action) {
 
 //SPOTIFY
       function spotify_this_song() {
-        fs.appendFile("liri.txt" + value, function(err) {
-          if (err) {
-            return console.log(err);
-          }
+         
+        spotify.search({ type: 'track', query: value, limit: 1 },
+            );
+        spotify.then(function(response) {
+
+                console.log(response.data);
+            // console.log("Artist: " + response.data.Artist + ".");
+            // console.log("Name of Song: " + response.data.Name);
+            // console.log("Link to Song: " +response.data.Link);
+            // console.log("Album: " + response.data.Album);
+
         });
-        console.log("Spotify says " + value + ".");
-      }
+    }  
+
 
 //IMDB
       function movie_this() {
