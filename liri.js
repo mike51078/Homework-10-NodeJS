@@ -41,9 +41,19 @@ for (var i = 4; i < response.length; i++) {
 // BANDS IN TOWN
       function concert_this() {
         var queryUrl = "https://rest.bandsintown.com/artists/" + userInput + "/events?app_id=codingbootcamp";
-        console.log(queryUrl);
+        axios
+            .get(queryUrl)
+            .then(function(concert) {
+            console.log('===================================================')
+            console.log('');
+            console.log("Venue name: " + concert.data[0].venue.name);
+            console.log("Venue location: " + concert.data[0].venue.city + ", " + concert.data[0].venue.region);
+            console.log("Date of concert: " + moment(concert.data[0].datetime).format("MM/DD/YYYY"));
+            console.log('');
+            console.log('===================================================')
+            // console.log(concert.data[0]);
+        })
 
-        
       }
 
 //SPOTIFY
@@ -72,8 +82,9 @@ for (var i = 4; i < response.length; i++) {
         
             var queryUrl = "http://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&apikey=trilogy";
             console.log(queryUrl);
-            axios.get(queryUrl).then(
-            function(entry) {
+            axios
+                .get(queryUrl)
+                .then(function(entry) {
                 console.log('===================================================')
                 console.log('');
                 console.log("Title: " + entry.data.Title);
@@ -92,7 +103,9 @@ for (var i = 4; i < response.length; i++) {
 //DO WHAT IT SAYS...NOW
       function do_what_it_says() {
         fs.readFile("./random.txt", "utf8", function(error, response)  {
-            if (error) throw error;
+            if (error) {
+                return console.log(error);
+            };
             response = response.split(",");
             action = response[0];
             userInput = response[1]
