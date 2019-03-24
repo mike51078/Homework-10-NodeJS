@@ -58,6 +58,9 @@ for (var i = 4; i < response.length; i++) {
 
 //SPOTIFY
       function spotify_this_song() {
+          if (!userInput) {
+              userInput = "the sign ace of base"
+          };
          
         spotify
             .search({ type: 'track', query: userInput, limit: 1 })
@@ -78,12 +81,15 @@ for (var i = 4; i < response.length; i++) {
 
 //IMDB
       function movie_this() {
+        if (!userInput) {
+            userInput = "mr nobody"
+        };
         
-            var queryUrl = "http://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&apikey=trilogy";
-            console.log(queryUrl);
-            axios
-                .get(queryUrl)
-                .then(function(entry) {
+        var queryUrl = "http://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&apikey=trilogy";
+        console.log(queryUrl);
+        axios
+            .get(queryUrl)
+            .then(function(entry) {
                 console.log('===================================================')
                 console.log('');
                 console.log("Title: " + entry.data.Title);
@@ -96,7 +102,7 @@ for (var i = 4; i < response.length; i++) {
                 console.log("Actors in the Movie: " + entry.data.Actors);
                 console.log('');
                 console.log('===================================================')
-                })
+            })
          }
 
 //DO WHAT IT SAYS...NOW
