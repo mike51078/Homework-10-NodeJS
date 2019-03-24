@@ -49,15 +49,19 @@ switch (action) {
 //SPOTIFY
       function spotify_this_song() {
          
-        spotify.search({ type: 'track', query: value, limit: 1 },
-            );
-        spotify.then(function(response) {
+        spotify
+            .search({ type: 'track', query: userInput, limit: 1 })
+            .then(function(response) {
 
-                console.log(response.data);
+                console.log(response);
+            // console.log('===================================================')
+            // console.log('');
             // console.log("Artist: " + response.data.Artist + ".");
             // console.log("Name of Song: " + response.data.Name);
             // console.log("Link to Song: " +response.data.Link);
             // console.log("Album: " + response.data.Album);
+            // console.log('');
+            // console.log('===================================================')
 
         });
     }  
@@ -70,6 +74,8 @@ switch (action) {
             console.log(queryUrl);
             axios.get(queryUrl).then(
             function(entry) {
+                console.log('===================================================')
+                console.log('');
                 console.log("Title: " + entry.data.Title);
                 console.log("Release Year: " + entry.data.Year);
                 console.log("IMDB Rating: " + entry.data.imdbRating);
@@ -78,6 +84,8 @@ switch (action) {
                 console.log("Language of the Movie: " + entry.data.Language);
                 console.log("Plot of the Movie: " + entry.data.Plot);
                 console.log("Actors in the Movie: " + entry.data.Actors);
+                console.log('');
+                console.log('===================================================')
                 })
          }
 
