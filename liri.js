@@ -18,7 +18,7 @@ for (var i = 4; i < response.length; i++) {
     userInput += "+" + response[i];
 }
 
-function queryInput(action, userInput) {
+function queryInput() {
 
     switch (action) {
 
@@ -40,7 +40,7 @@ function queryInput(action, userInput) {
     };
 };
 
-queryInput(action, userInput);
+queryInput();
 
 // BANDS IN TOWN
       function concert_this() {
@@ -111,15 +111,23 @@ queryInput(action, userInput);
 
 //DO WHAT IT SAYS...NOW
       function do_what_it_says() {
-        fs.readFile("./random.txt", "utf8", function(error, output)  {
+        fs.readFile("random.txt", "utf8", function(error, output)  {
             if (error) {
                 return console.log(error);
             };
-            output = output.split(",");
-            action = output[0];
-            userInput = output[1];
+            outputArray = output.split(",");
+            console.log(outputArray);
+            outputArray2 = outputArray[1].split(" ")
+            console.log(outputArray2)
+            action = outputArray[0];
+            userInput = outputArray2[0];
+
+            for(i = 1; i < outputArray2.length; i++) {
+                userInput += "+" + outputArray2[i]
+            }
             console.log(action);
             console.log(userInput);
-            // queryInput(action, userInput);
+            queryInput();
+
           });
         }
