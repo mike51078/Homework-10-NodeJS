@@ -87,10 +87,12 @@ queryInput();
       function movie_this() {
         if (!userInput) {
             userInput = "mr nobody"
+            console.log("\nIf you haven't watched 'Mr. Nobody,' then you should: <http://www.imdb.com/title/tt0485947/>")
+            console.log("It's on Netflix!")
         };
         
         var queryUrl = "http://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&apikey=trilogy";
-        console.log(queryUrl);
+        // console.log(queryUrl);
         axios
             .get(queryUrl)
             .then(function(entry) {
@@ -116,17 +118,17 @@ queryInput();
                 return console.log(error);
             };
             outputArray = output.split(",");
-            console.log(outputArray);
+            // console.log(outputArray);
             outputArray2 = outputArray[1].split(" ")
-            console.log(outputArray2)
+            // console.log(outputArray2)
             action = outputArray[0];
             userInput = outputArray2[0];
 
             for(i = 1; i < outputArray2.length; i++) {
                 userInput += "+" + outputArray2[i]
-            }
-            console.log(action);
-            console.log(userInput);
+            };            
+            // console.log(userInput);
+            // console.log(action);
             queryInput();
 
           });
