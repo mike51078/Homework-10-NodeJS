@@ -12,7 +12,12 @@ This assignment was to create an application called LIRI. LIRI is like iPhone's 
    * [OMDB](http://www.omdbapi.com)
    
    * [Bands In Town API](http://www.artists.bandsintown.com/bandsintown-api)
+   
 
+The following technologies were used in the creation of this application:
+* NodeJS
+* API Query
+* JavaScript
 
 
 ### Contents
@@ -70,17 +75,7 @@ This assignment was to create an application called LIRI. LIRI is like iPhone's 
 
    * If no song is provided then your program will default to "The Sign" by Ace of Base.
 
-   * You will utilize the [node-spotify-api](https://www.npmjs.com/package/node-spotify-api) package in order to retrieve song information from the Spotify API.
-
-   * The Spotify API requires you sign up as a developer to generate the necessary credentials. You can follow these steps in order to generate a **client id** and **client secret**:
-
-   * Step One: Visit <https://developer.spotify.com/my-applications/#!/>
-
-   * Step Two: Either login to your existing Spotify account or create a new one (a free account is fine) and log in.
-
-   * Step Three: Once logged in, navigate to <https://developer.spotify.com/my-applications/#!/applications/create> to register a new application to be used with the Spotify API. You can fill in whatever you'd like for these fields. When finished, click the "complete" button.
-
-   * Step Four: On the next screen, scroll down to where you see your client id and client secret. Copy these values down somewhere, you'll need them to use the Spotify API and the [node-spotify-api package](https://www.npmjs.com/package/node-spotify-api).
+![Spotify-This-Song](https://user-images.githubusercontent.com/45186642/55026197-e67d1c80-4fd8-11e9-935e-3ac65ac132a6.gif)
 
 3. `node liri.js movie-this '<movie name here>'`
 
@@ -99,11 +94,7 @@ This assignment was to create an application called LIRI. LIRI is like iPhone's 
 
    * If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
 
-     * If you haven't watched "Mr. Nobody," then you should: <http://www.imdb.com/title/tt0485947/>
-
-     * It's on Netflix!
-
-   * You'll use the `axios` package to retrieve data from the OMDB API. Like all of the in-class activities, the OMDB API requires an API key. You may use `trilogy`.
+![Movie-This](https://user-images.githubusercontent.com/45186642/55026246-014f9100-4fd9-11e9-98d4-7f8294ab64be.gif)
 
 4. `node liri.js do-what-it-says`
 
@@ -112,3 +103,5 @@ This assignment was to create an application called LIRI. LIRI is like iPhone's 
      * It should run `spotify-this-song` for "I Want it That Way," as follows the text in `random.txt`.
 
      * Edit the text in random.txt to test out the feature for movie-this and concert-this.
+     
+     ![Do-What-It-Says](https://user-images.githubusercontent.com/45186642/55026330-2b08b800-4fd9-11e9-86e5-4322944f8b5a.gif)
