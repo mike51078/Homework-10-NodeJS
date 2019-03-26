@@ -21,7 +21,7 @@ This assignment was to create an application called LIRI. LIRI is like iPhone's 
 
 2. The `.gitignore` file was created to let git not to track these files, and thus they won't be committed to Github.  This was used for the 'node_modules', '.DS_Store', and '.env' files.
 
-3. Make a JavaScript file named `keys.js`.  This contains the working code _____
+3. Make a JavaScript file named `keys.js`.  This contains the link to the '.env' file directing the program to get the API keys for spotify.
 
 4. The `.env` file was created to replace the values for the API keys (no quotes) for Spotify.  This file is used by the `dotenv` package to set environment variables to the global `process.env` object in node. These are values that are meant to be specific to the computer that node is running on, and since this file was placed into the 'gitignore' file, they won't be pushed to github.
 
@@ -32,27 +32,7 @@ This assignment was to create an application called LIRI. LIRI is like iPhone's 
      * spotify-this-song,"I Want it That Way"
      
 
-6. The `liri.js` file .
-
-7. At the top of the `liri.js` file, add code to read and set any environment variables with the dotenv package:
-
-```js
-require("dotenv").config();
-```
-
-8. Add the code required to import the `keys.js` file and store it in a variable.
-
-```js
-  var keys = require("./keys.js");
-```
-  
-* You should then be able to access your keys information like so
-
-  ```js
-  var spotify = new Spotify(keys.spotify);
-  ```
-
-9. Make it so liri.js can take in one of the following commands:
+6. The `liri.js` file performs numerous functions.  At the top of the file, there is code to read and set any environment variables with the dotenv package.  There is additionally code to import the `keys.js` file and store it in a variable.  Liri.js is able to take in one of the following commands:
 
    * `concert-this`
 
@@ -73,6 +53,8 @@ require("dotenv").config();
      * Venue location
 
      * Date of the Event (use moment to format this as "MM/DD/YYYY")
+     
+![image](https://user-images.githubusercontent.com/45186642/55025832-1841b380-4fd8-11e9-8843-0c491e8a6a97.png)
 
 2. `node liri.js spotify-this-song '<song name here>'`
 
