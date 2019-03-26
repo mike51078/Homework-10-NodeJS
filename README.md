@@ -54,7 +54,7 @@ This assignment was to create an application called LIRI. LIRI is like iPhone's 
 
      * Date of the Event (use moment to format this as "MM/DD/YYYY")
      
-![image](https://user-images.githubusercontent.com/45186642/55025832-1841b380-4fd8-11e9-8843-0c491e8a6a97.png)
+![Concert-This](https://user-images.githubusercontent.com/45186642/55025938-49ba7f00-4fd8-11e9-88c9-bf257e0e91cf.gif)
 
 2. `node liri.js spotify-this-song '<song name here>'`
 
