@@ -105,3 +105,6 @@ The following technologies were used in the creation of this application:
      * Edit the text in random.txt to test out the feature for movie-this and concert-this.
      
      ![Do-What-It-Says](https://user-images.githubusercontent.com/45186642/55026330-2b08b800-4fd9-11e9-86e5-4322944f8b5a.gif)
+
+
+Thank you for taking the time to review this.  If you have any questions, please reach out to me at elcid00@aol.com.
