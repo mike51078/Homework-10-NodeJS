@@ -9,7 +9,7 @@ This assignment was to create an application called LIRI. LIRI is like iPhone's 
 
    * [Axios](https://www.npmjs.com/package/axios)
    
-   * [OMDB] (http://www.omdbapi.com)
+   * [OMDB](http://www.omdbapi.com)
    
    * [Bands In Town API](http://www.artists.bandsintown.com/bandsintown-api)
 
@@ -21,19 +21,18 @@ This assignment was to create an application called LIRI. LIRI is like iPhone's 
 
 2. The `.gitignore` file was created to let git not to track these files, and thus they won't be committed to Github.  This was used for the 'node_modules', '.DS_Store', and '.env' files.
 
-3. Make a JavaScript file named `keys.js`.  This contains the working code for the file
+3. Make a JavaScript file named `keys.js`.  This contains the working code _____
 
 4. The `.env` file was created to replace the values for the API keys (no quotes) for Spotify.  This file is used by the `dotenv` package to set environment variables to the global `process.env` object in node. These are values that are meant to be specific to the computer that node is running on, and since this file was placed into the 'gitignore' file, they won't be pushed to github.
 
 * If you want to clone this application from github and run it yourself, you will need to supply your own `.env` file for it to work.
 
-5. The `random.txt` file contains the following in with no extra characters or white space:
+5. The `random.txt` contains data which is used to test the 'do-what-it-says' command.  The file contains the following in with no extra characters or white space.
 
      * spotify-this-song,"I Want it That Way"
      
-   This file is used to test the 
 
-6. Make a JavaScript file named `liri.js`.
+6. The `liri.js` file .
 
 7. At the top of the `liri.js` file, add code to read and set any environment variables with the dotenv package:
 
